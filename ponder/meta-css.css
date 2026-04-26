@@ -1,5 +1,5 @@
 body {
-    background-color: palevioletred;
+    background-color: white;
     font-size: 20px;
 
 }
@@ -15,7 +15,7 @@ p {
 }
 hr {
     height: 3px;
-    background-color: rgb(249, 18, 57);
+    background-color: wheat;
 }
 h1, h2, p{
     text-align: center;
