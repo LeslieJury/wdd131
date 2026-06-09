@@ -2,8 +2,9 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 50px;
     line-height: 1.6;
+    text-align: right;
 }
 header, footer {
     background-color: #ffffff;
@@ -14,24 +15,20 @@ header, footer {
 }
 .main-nav {
     list-style: none;
-    padding: 0;
-    border: 1px solid rgb(9, 0, 128);
     text-align: right;
-
 }
 .main-nav li {
     padding: 8px;
     display: inline-block;
 }
 .main-nav a {
-    color: #2b3592;
+    color: #ff2cc3;
     text-decoration: none;
 }
 #book-list {
     padding: 0 2rem;
 }
 .book {
-    border: 2px solid #ccc;
     padding: 1rem;
     border-radius: 10px;
     max-width: 700px;
@@ -49,7 +46,6 @@ header, footer {
 .book img {
     max-width: 100%;
     display: block;
-    border-radius: 8px;
     margin: 0 auto;
 }
 #desc {
