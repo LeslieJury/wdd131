@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="charactercard.css" rel="stylesheet">
+    <script src="charactercard.js" defer></script>
+</head>
+<body>
+    
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Character Card">
+    <meta property="og:description" content="A JavaScript character card demo featuring a hero with attack and level up mechanics.">
+    <meta property="og:url" content="https://lesliejury.github.io/wdd131/charactercard">
+    <meta property="og:image" content="https://lesliejury.github.io/wdd131/charactercard/images/social-preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Character Card">
+    <meta name="twitter:description" content="A JavaScript character card demo featuring a hero with attack and level up mechanics.">
+    <meta name="twitter:image" content="https://lesliejury.github.io/wdd131/charactercard/images/social-preview.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <main>
+        <h1>Character Card</h1>
+
+        <div id="card" class="card">
+        <img id="char-image" src="character_portrait.webp" alt="Character portrait">
+        <div class="card-info">
+            <h2 id="char-name"></h2>
+            <p><span class="label">Class:</span> <span id="char-class"></span></p>
+            <p><span class="label">Level:</span> <span id="char-level"></span></p>
+            <p><span class="label">Health:</span> <span id="char-health"></span></p>
+            <div class="buttons">
+                <button id="btn-attack">Attack</button>
+                <button id="btn-levelup">Level Up</button>
+            </div>
+        </div>
+        </div>
+
+
+
+        <p id="message"></p>
+</body>
+</html>
