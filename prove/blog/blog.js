@@ -40,6 +40,26 @@ const articles = [
 	}
 ];
                 
-movies.forEach(movie => {
-    
+
+const book_list = document.querySelector('#book-list');
+ 
+articles.forEach(article => {
+  const card = document.createElement('article');
+  card.classList.add('article-card');
+ 
+  card.innerHTML = `
+    <img src="${article.imgSrc}" alt="${article.imgAlt}" />
+    <div class="card-body">
+      <h2>${article.title}</h2>
+      <div class="card-meta">
+        <span>📅 ${article.date}</span>
+        <span>🎭 ${article.genre}</span>
+        <span>👤 Ages ${article.ages}</span>
+      </div>
+      <p class="description">${article.description}</p>
+      <div class="card-stars">${article.stars}</div>
+    </div>
+  `;
+ 
+  book_list.appendChild(card);
 });
