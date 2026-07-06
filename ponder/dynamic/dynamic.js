@@ -60,6 +60,7 @@ movies.forEach(movie => {
         </article>`
 
     article.innerHTML = html;
+    movieList.appendChild(article);
 
 
 });
