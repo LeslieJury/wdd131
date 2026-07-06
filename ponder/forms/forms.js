@@ -9,7 +9,7 @@ const campusBoxes = document.querySelectorAll('input[name="campus"]');
 function updateNotesField() {
   const value = travelRange.value;
 
-  if (type === 'many'){
+  if (value === 'many'){
     notesContainer.hidden = false;
     notes.required = true;
   } else {
