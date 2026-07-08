@@ -19,34 +19,29 @@
 			<hr />
 			<h2>Overview</h2>
 			<h3>Purpose</h3>
-			<p>The purpose of this web app is to keep track of your tasks for the day and categorize them into sections, then you can level up those sections.</p>
-			<!-- change this -->
+			<p>The purpose of this web app is to keep track of your tasks for the day and categorize them into sections, 
+				then you can finish those tasks.</p>
 
 			<h3>Audience</h3>
 			<p>People who need help with their productivity tasks and want a fun solution to their to-do lists.</p>
-			<!-- change this -->
 
 			<h3>Dynamic elements</h3>
-			<p>The randomly selected task, the leveling up task categories.</p>
-			<!-- change this -->
+			<p>My example of dynamics elements is the randomly selected task, the leveling up task categories, and the reactive buttons changing the screen.</p>
 
-			<hr />
+			<hr/>
 			<h2>Branding</h2>
 			<h3>Website Logo</h3>
-			<!-- Replace this with some sort of logo for your site.  A logo can be as simple as the name of your site in a nice font :) -->
 			<img src="#" alt="Logo image" />
 			<hr />
 			<h2>Style Guide</h2>
 
 			<h3>Color Palette</h3>
-			<!--  The colors you choose for a website are one of the most important decisions you will make. Follow the instructions on the activity in iLearn then return and replace the color codes below with the hex color codes (the 6 digit numbers that show at the bottom of each color) for the colors you have chosen below.  You should have at least 2 colors but do not have to fill in all 4 if you do not need them.  -->
 
-			<!-- Copy and paste the URL to your finished palette below Make sure to paste it into both spots -->
 			Palette URL:
 			<a
-				href="https://coolors.co/c97b84-533747-76949f-86bbbd-8cd867"
+				href="https://coolors.co/ffe5f3-ffa8d5-aff9af"
 				target="_blank"
-				>https://coolors.co/c97b84-533747-76949f-86bbbd-8cd867</a
+				>https://coolors.co/ffe5f3-ffa8d5-aff9af</a
 			>
 
 			<table class="colors">
@@ -57,12 +52,11 @@
 						<th>Accent 1</th>
 						<th>Accent 2</th>
 					</tr>
-					<!-- Replace the numbers in the boxes below with your hex color codes. Then switch to the site-plan.css file and change your colors there as well. -->
 					<tr>
-						<td class="primary">[#C97B84]</td>
-						<td class="secondary">[#533747]</td>
-						<td class="accent1">[#76949F]</td>
-						<td class="accent2">[#86BBBD]</td>
+						<td class="primary">[#FFA8D5]</td>
+						<td class="secondary">[#FFE5F3]</td>
+						<td class="accent1">[#AFF9AF]</td>
+						<td class="accent2">[#713E5A]</td>
 					</tr>
 				</tbody>
 			</table>
@@ -73,49 +67,59 @@
 
 			<p>
                 dictionary categories {
-                    hygiene = [shower, brush_teeth]
-                    chore = [vacuum, laundry]
+                    health = [shower, brush_teeth]
                     school = [wdd_week10_hw, cse_week9_hw]
                     career = [apply_job, informational_interview]
                 }
+				<br>
 
                 foreach category in categories{
                     task_selected = category[random_num]
                 }
-            
+            	<br>
                 display_random_tasks() {
-                    print hygiene, chore, school, and career tasks selected on screen
+                    print health, school, and career tasks selected on screen
                 }
-
+				<br>
                 on button press of choice:
-                    category xp +10
+                    selected_category xp +10
                 
                 display random tasks again
-
-                on xp = multiples of 50:
-                    level up
+				<br>
+				if (All tasks not finished) {
+					repeat;
+				} else {
+					Complete screen
+				}
 
 			</p>
 
 			<h3>Wireframes</h3>
-			<p>
-				Create wireframes for your project page(s). One for each page and list them
-				here. 
-			</p>
 
-			<h3>Landing page</h3>
+			<h3>Landing Page</h3>
 			<p>
-				[Any additional details about home that the wireframe does not make
-				clear]
+				Click to start game
 			</p>
-			<img src="#" alt="home page wireframe" />
+			<img src="images/landing.png" alt="landing page" />
 
-			<h3>[Page 2 if needed]</h3>
+			<h3>Selection Page</h3>
 			<p>
-				[Any additional details about page 2 that the wireframe does not make
-				clear]
+				Select your character
 			</p>
-			<img src="#" alt="page 2 wireframe" />
+			<img src="images/select.png" alt="selection screen" />
+
+			<h3>Training Page</h3>
+			<p>
+				Complete the tasks on screen and click done to progress your bar.
+			</p>
+			<img src="images/training.png" alt="training screen" />
+
+			<h3>Finishing Page</h3>
+			<p>
+				Game complete! Check your score on each category.
+			</p>
+			<img src="images/finish.png" alt="finishing screen" />
+
 		</main>
 	</body>
 </html>
