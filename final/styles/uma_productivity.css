@@ -69,3 +69,50 @@ button {
   padding: 13px 26px;
   color: var(--white);  
 }
+
+.select-uma {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.uma-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.curren-hover-img {
+  width: 200px;
+  height: 200px;
+  background-image: url("../images/curren_mini_0.png");
+  background-size: cover;
+}
+
+.curren-hover-img:hover {
+  background-image: url("../images/curren_mini_1.png");
+}
+
+.haru-hover-img {
+  width: 200px;
+  height: 200px;
+  background-image: url("../images/haru_mini_0.png");
+  background-size: cover;
+}
+
+.haru-hover-img:hover {
+  background-image: url("../images/haru_mini_1.png");
+}
+
+.special-hover-img {
+  width: 200px;
+  height: 200px;
+  background-image: url("../images/special_mini_0.png");
+  background-size: cover;
+}
+
+.special-hover-img:hover {
+  background-image: url("../images/special_mini_1.png");
+}
