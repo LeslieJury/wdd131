@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&display=swap');
 
 :root {
     --primary-color: #FFA8D5;
@@ -11,6 +11,21 @@
     font-family: "Lilita One", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+
+.inter-text {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -28,7 +43,7 @@ body {
   z-index: 0;
 }
 
-h2, body, button{
+h2, button{
     font-family: "Lilita One", sans-serif;
     color: var(--primary-color);
 }
@@ -115,4 +130,39 @@ button {
 
 .special-hover-img:hover {
   background-image: url("../images/special_mini_1.png");
+}
+
+.curren-regular {
+    width: 500px;
+    height: 500px;
+    background-image: url("../images/Curren_Uniform.png");
+    background-size: cover;
+    opacity: 100%;
+}
+
+#background {
+    background-image: url("../images/classroom.jpg");
+    object-fit: cover;
+    opacity: 50%;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/classroom.jpg");
+  background-size: cover;
+  opacity: 0.5; /* Image transparency */
+  z-index: 0;
+}
+.content {
+  position: relative;
+  z-index: 1; /* Ensures content is above the background */
+}
+
+.pink-bar {
+    display: flex;
+    background-color: var(--secondary-color);
 }
