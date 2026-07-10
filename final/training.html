@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uma Training</title>
     <link href="styles/uma_productivity.css" rel="stylesheet">
-    <script href="uma_productivity.js" defer></script>
+    <script src="training.js" defer></script>
 </head>
 <body>
-    <img class="bg-image" src="images/classroom.jpg">
+    <img class="bg-image-class">
     <div class="content">
         <h1> Uma Training</h1>
         <div class="uma-group">
             <div class="curren-regular"></div>
         </div>
+ <button id="done-button" disabled style="display: none;">Done</button>
         <div class="pink-bar">
-            <p>Hello</p>
+            
+            <div class="print-out">
+                <h2>School</h2>
+                <p id="school"></p>
+                <button id="school-button">Done!</button>
+            </div>
+
+            <div class="print-out">
+                <h2>Career</h2>
+                <p id="career"></p>
+                <button id="career-button">Done!</button>
+            </div>
+
+            <div class="print-out">
+                <h2>Health</h2>
+                <p id="health"></p>
+                <button id="health-button">Done!</button>
+            </div>
         </div>
     </div>
 </body>

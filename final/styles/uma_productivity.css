@@ -21,6 +21,19 @@
   font-style: normal;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.content {
+    height: 100vh; /* exactly the height of the screen */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; /* padding won't push it past 100vh */
+}
+
 p {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -46,6 +59,7 @@ body {
 h2, button{
     font-family: "Lilita One", sans-serif;
     color: var(--primary-color);
+    margin: 0;
 }
 
 h1{
@@ -140,13 +154,21 @@ button {
     opacity: 100%;
 }
 
+.curren-racing {
+    width: 500px;
+    height: 500px;
+    background-image: url("../images/Curren_Racing.png");
+    background-size: cover;
+    opacity: 100%;
+}
+
 #background {
     background-image: url("../images/classroom.jpg");
     object-fit: cover;
     opacity: 50%;
 }
 
-.bg-image {
+.bg-image-class {
   position: absolute;
   top: 0;
   left: 0;
@@ -154,15 +176,38 @@ button {
   height: 100%;
   background-image: url("../images/classroom.jpg");
   background-size: cover;
-  opacity: 0.5; /* Image transparency */
+  opacity: 0.5; 
   z-index: 0;
 }
+
+.bg-image-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/horse-racing-track.webp");
+  background-size: cover;
+  opacity: 0.5; 
+  z-index: 0;
+}
+
 .content {
   position: relative;
-  z-index: 1; /* Ensures content is above the background */
+  z-index: 1;
 }
 
 .pink-bar {
-    display: flex;
     background-color: var(--secondary-color);
+    display: flex;
+    width: 100%;
+    height: 25%;
 }
+
+.print-out {
+    display: flex;
+    flex-direction: column;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
