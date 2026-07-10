@@ -1,10 +1,21 @@
-console.log("test");
 // Training logic
 
+// Button for the next page that only appears after your tasks are done
+document.getElementById("done-button").addEventListener("click", function() {
+    window.location.href = "success.html";
+});
+
+// Counters for debugging purposes
+school_counter = 0;
+career_counter = 0;
+health_counter = 0;
+
+// Task arrays
 school = ["WDD Homework 2", "CSE Homework 2", "ECEN Project 1", "Study for Exam 1", "Talk to professor", "Extra credit assignment"];
 career = ["Apply to 5 jobs", "Informational Interview", "Research Companies", "Cold Email a local tech company", "Make 5 Connections", "Play Puzzle"];
 health = ["Shower", "Eat breakfast", "Take Medication", "Clean up floor", "Do a Relaxing Task", "Drink a glass of water"];
 
+// Selects a random task from that task array
 function random_task(task_list){
     let random_task_num = Math.floor(Math.random() * task_list.length);
     let task = task_list[random_task_num];
@@ -12,6 +23,7 @@ function random_task(task_list){
     return task;
 }
 
+// Checks if user has completed all tasks
 function check_if_done() {
     if (school.length === 0 && career.length === 0 && health.length === 0) {
         const doneButton = document.getElementById("done-button");
@@ -20,22 +32,16 @@ function check_if_done() {
     }
 }
 
-document.getElementById("done-button").addEventListener("click", function() {
-    window.location.href = "success.html";
-});
-
-school_counter = 0;
-career_counter = 0;
-health_counter = 0;
-
-function main() {
+function display_tasks(){
     let school_task = random_task(school);
     let career_task = random_task(career);
     let health_task = random_task(health);
     document.getElementById("school").innerHTML = school_task;
     document.getElementById("career").innerHTML = career_task;
     document.getElementById("health").innerHTML = health_task;
+}
 
+function task_completer(){
     document.getElementById("school-button").addEventListener("click", function() {
         if (school.length > 0) {
             document.getElementById("school").innerHTML = random_task(school);
@@ -66,7 +72,12 @@ function main() {
         }
         check_if_done();
     });
+
 }
 
+function main() {
+    display_tasks();
+    task_completer();
+}
 
 main();
