@@ -8,7 +8,7 @@ const recipes = [
 		datePublished: '2016-10-16',
 		tags: ['Waffles', 'Sweet Potato', 'Side'],
 		description: 'Savory waffles made with Sweet potato with a hint of Ginger',
-		image: './images/sweet-potato-waffle-md.jpg',
+		image: 'sweet-potato-waffle-md.jpg',
 		recipeIngredient: [
 			'2 separated eggs',
 			'1/4 C Oil',
@@ -44,7 +44,7 @@ const recipes = [
 		tags: ['Chicken', 'Entree'],
 		description:
 			'Delicious quick and easy creamy rice dish. The mustard, mushrooms, and lemon all blend together wonderfully',
-		image: './images/escalopes-de-poulet-a-la-creme.webp',
+		image: 'escalopes-de-poulet-a-la-creme.webp',
 		recipeIngredient: [
 			'2 Chicken Tenders, Cubed',
 			'4 Mushrooms, Sliced',
@@ -76,7 +76,7 @@ const recipes = [
 		tags: ['Potatoes', 'side'],
 		description:
 			'Easy and delicious oven roasted potatoes that go great with almost anything.',
-		image: './images/roasted-potatoes.webp',
+		image: 'roasted-potatoes.webp',
 		recipeIngredient: [
 			'3-4 Medium Potatoes',
 			'1 Tbsp Olive oil',
@@ -106,7 +106,7 @@ const recipes = [
 		tags: ['Southwest', 'entree'],
 		description:
 			'Black beans and tomatoes served over a bed of rice. Top with cheese and scoop up with tortilla chips for maximum enjoyment.',
-		image: './images/black-beans-and-rice.jpg',
+		image: 'black-beans-and-rice.jpg',
 		recipeIngredient: [
 			'1 Medium Onion, diced',
 			'2 Cloves Garlic, minced',
@@ -139,7 +139,7 @@ const recipes = [
 		tags: ['chicken', 'entree', 'Indian'],
 		description:
 			'Quick and easy Chicken curry recipe made with easy to find ingredients.',
-		image: './images/chicken-curry.webp',
+		image: 'chicken-curry.webp',
 		recipeIngredient: [
 			'4 Slices Bacon',
 			'1 clove Garlic',
@@ -176,7 +176,7 @@ const recipes = [
 		datePublished: '2018-09-19',
 		tags: ['dessert'],
 		description: 'Delicious soft chocolate chip cookies with coconut.',
-		image: './images/chocolate-chip-cookies.jpg',
+		image: 'chocolate-chip-cookies.jpg',
 		recipeIngredient: [
 			'1 Lb butter, softened',
 			'1 C white sugar',
@@ -211,7 +211,7 @@ const recipes = [
 		tags: ['dessert', 'German'],
 		description:
 			"This gooseberry cake with crumble is easy to follow, a bit tart and not too sweet. Made up of a cake base, filled with fresh gooseberries and vanilla cream and finished off with crumble that's flavored with vanilla. A must have recipe for gooseberry lovers!!",
-		image: './images/german-gooseberry-cake.jpg',
+		image: 'german-gooseberry-cake.jpg',
 		recipeIngredient: [
 			'For the Cake Base:',
 			'180 g (1 ½ cups/ 6.3 oz) plain flour',
@@ -254,7 +254,7 @@ const recipes = [
 		tags: ['dessert'],
 		description:
 			"This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.",
-		image: './images/apple-crisp.jpg',
+		image: 'apple-crisp.jpg',
 		recipeIngredient: [
 			'10 C apples, cored and sliced',
 			'1 C white sugar',
@@ -283,50 +283,13 @@ const recipes = [
                     
 
 
-
-
-
-let recipeContainer = document.querySelector("#recipe-container");
+let recipeContainer = document.querySelector("#recipe-card");
 let button = document.querySelector("#search-term");
 let input = document.querySelector("#search");
 
-
 button.addEventListener('click', search);
 
-function search() {
-  let recipeQuery = input.value;
-
-  let filteredRecipe = recipes.filter(function(recipe){
-    return (
-      recipe.name.toLowerCase().includes(hikeQuery.toLowerCase()) || 
-      recipe.description.toLowerCase().includes(hikeQuery.toLowerCase()) ||
-      recipe.tags.find(tag => tag.toLowerCase().includes(hikeQuery.toLowerCase()))
-    );
-  })
-
-  console.log(filteredRecipes);
-
-  let sortedHikes = filteredRecipes.sort(compareRecipe);
-
-  function compareRecipes(a,b) {
-    if (a.difficulty < b.difficulty) {
-        return -1;
-    } else if (a.difficulty > b.difficulty) {
-        return 1;
-    }
-    return 0;
-  }
-  console.log(sortedRecipe);
-
-  sortedRecipes.forEach(function(recipe) {
-    renderRecipe(recipe);
-  })
-
-}
-
-
-
-/* for the enter key to work on search - not just clicking the search button */
+/* for the enter key to work on search, not just clicking the search button */
 input.addEventListener('keypress', handleEnter);
 function handleEnter(event) {
   if (event.key === 'Enter') {
@@ -334,50 +297,78 @@ function handleEnter(event) {
   }
 }
 
-let randomNum = Math.floor(Math.random() * hikes.length);
-console.log(randomNum);
+function search() {
+  let recipeQuery = input.value.toLowerCase();
+
+  let filteredRecipes = recipes.filter(function (recipe) {
+    return (
+      recipe.name.toLowerCase().includes(recipeQuery) ||
+      recipe.description.toLowerCase().includes(recipeQuery) ||
+      recipe.tags.find(tag => tag.toLowerCase().includes(recipeQuery))
+    );
+  });
+
+  let sortedRecipes = filteredRecipes.sort(compareRecipes);
+
+  recipeContainer.innerHTML = '';
+  sortedRecipes.forEach(function (recipe) {
+    renderRecipes(recipe);
+  });
+}
+
+function compareRecipes(a, b) {
+  if (a.rating < b.rating) {
+    return -1;
+  } else if (a.rating > b.rating) {
+    return 1;
+  }
+  return 0;
+}
 
 function tagTemplate(tags) {
-    return tags.map((tag)=> `<button>${tag}</button>`).join(' ');
+  return tags.map((tag) => `<span class="category-tag">${tag}</span>`).join(' ');
 }
 
 function difficultyTemplate(rating) {
-		let html = `<span
-	class="rating"
-	role="img"
-	aria-label="Rating: ${rating} out of 5"
->  Difficulty: `
-    for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        html += `<span aria-hidden="true" class="icon-boot"> 🥾</span>`
-      } else {
-        html += `<span aria-hidden="true" class="icon-empty">▫️</span>`
-      }			
+  let html = `<span
+    class="rating"
+    role="img"
+    aria-label="Rating: ${rating} out of 5"
+  >`;
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      html += `<span aria-hidden="true" class="icon-star"> ⭐</span>`;
+    } else {
+      html += `<span aria-hidden="true" class="icon-empty">▫️</span>`;
     }
-    html += `</span>`
-    return html
   }
+  html += `</span>`;
+  return html;
+}
 
 function recipesTemplate(recipe) {
-    return `<div class="recipe-card">
-  <div class="recipe-content">
-    <h2>${recipe.name}</h2>
-    <div class="hike-tags">
-      ${tagTemplate(recipe.tags)}
-    </div>
-    <p>${recipe.description}</p>
-    <p>${difficultyTemplate(recipe.difficulty)}</p>
+  return `<div class="recipe-card">
+  <div class="recipe-image-wrapper">
+    <img class="recipe-image" src="${recipe.image}" alt="${recipe.name}">
   </div>
-</div>`
+  <div class="recipe-details">
+    ${tagTemplate(recipe.tags)}
+    <h2 class="recipe-title">${recipe.name}</h2>
+    ${difficultyTemplate(recipe.rating)}
+    <p class="recipe-description">${recipe.description}</p>
+  </div>
+</div>`;
 }
 
 function renderRecipes(recipe) {
-    let html = recipesTemplate(hike);
-    recipeContainer.innerHTML += html
+  let html = recipesTemplate(recipe);
+  recipeContainer.innerHTML += html;
 }
 
 function init() {
-    renderHike(recipes[randomNum]);
+  recipeContainer.innerHTML = '';
+  let randomNum = Math.floor(Math.random() * recipes.length);
+  renderRecipes(recipes[randomNum]);
 }
 
 init();

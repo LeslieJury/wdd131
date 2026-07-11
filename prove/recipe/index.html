@@ -5,27 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Book</title>
     <link href="recipe.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <script src="recipe.js" defer></script>
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your Title">
+    <meta property="og:description" content="Your Description">
+    <meta property="og:url" content="Your URL">
+    <meta property="og:image" content="social-preview-image.png">
+
+    <!-- X Card -->
+    <meta name="twitter:card" content="Social Preview Image">
+    <meta name="twitter:title" content="Your Title">
+    <meta name="twitter:description" content="Your Description">
+    <meta name="twitter:image" content="social-preview-image.png">
+
+    <!-- One favicon (ICO works everywhere) -->
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- One Apple Touch Icon (iOS home screen) -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
-<body>                
-<!-- Open Graph (Facebook, LinkedIn, etc.) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Your Title">
-<meta property="og:description" content="Your Description">
-<meta property="og:url" content="Your URL">
-<meta property="og:image" content="social-preview-image.png">
-
-<!-- X Card -->
-<meta name="twitter:card" content="Social Preview Image">
-<meta name="twitter:title" content="Your Title">
-<meta name="twitter:description" content="Your Description">
-<meta name="twitter:image" content="social-preview-image.png">
-
-<!-- One favicon (ICO works everywhere) -->
-<link rel="icon" href="/favicon.ico">
-
-<!-- One Apple Touch Icon (iOS home screen) -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<body>
 
   <header>
     <div class="logo-container">
@@ -34,18 +36,17 @@
     </div>
 
     <div class="search-container">
-      <input type="text" placeholder="Find a recipe" aria-label="Find a recipe">
-      <button type="submit" aria-label="Search">
+      <input type="text" id="search" placeholder="Find a recipe" aria-label="Find a recipe">
+      <button type="button" id="search-term" aria-label="Search">
         <img src="search.svg" alt="Search Icon">
       </button>
     </div>
   </header>
 
   <main>
-    <div id="recipe-container">
+    <div id="recipe-card">
       
     </div>
-
   </main>
 
   <footer>
@@ -54,17 +55,12 @@
     </div>
 
     <div class="social">
-
       <a href="#" aria-label="Instagram"><img src="instagram_icon.svg" alt="instagram icon"></a>
       <a href="#" aria-label="YouTube"><img src="youtube_icon.svg" alt="youtube icon"></a>
       <a href="#" aria-label="Pinterest"><img src="pinterest_icon.svg" alt="pinterest icon"></a>
-    </div> 
+    </div>
   </footer>
 
-
-
-
-
-
+  <script src="recipe.js"></script>
 </body>
 </html>
