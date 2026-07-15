@@ -1,83 +1,92 @@
-// Training logic
+// Uma Training Logic
 
-// Button for the next page that only appears after your tasks are done
-document.getElementById("done-button").addEventListener("click", function() {
-    window.location.href = "success.html";
-});
+// Import data on selected character
+const rawData = localStorage.getItem("selectedUma");
+const activeUma = JSON.parse(rawData);
 
-// Counters for debugging purposes
-school_counter = 0;
-career_counter = 0;
-health_counter = 0;
+// Declare images and task lists
+const uniform_img = activeUma.uniform_img;
+const racing_img = activeUma.racing_img;
+const task_list = activeUma.task_list;
 
-// Task arrays
-school = ["WDD Homework 2", "CSE Homework 2", "ECEN Project 1", "Study for Exam 1", "Talk to professor", "Extra credit assignment"];
-career = ["Apply to 5 jobs", "Informational Interview", "Research Companies", "Cold Email a local tech company", "Make 5 Connections", "Play Puzzle"];
-health = ["Shower", "Eat breakfast", "Take Medication", "Clean up floor", "Do a Relaxing Task", "Drink a glass of water"];
+const school_task = document.getElementById("school_task");
+const career_task = document.getElementById("career_task");
+const health_task = document.getElementById("health_task");
 
-// Selects a random task from that task array
-function random_task(task_list){
-    let random_task_num = Math.floor(Math.random() * task_list.length);
-    let task = task_list[random_task_num];
-    task_list.splice(random_task_num, 1);
-    return task;
-}
+let school_index = 0;
+let career_index = 0;
+let health_index = 0;
 
-// Checks if user has completed all tasks
-function check_if_done() {
-    if (school.length === 0 && career.length === 0 && health.length === 0) {
-        const doneButton = document.getElementById("done-button");
-        doneButton.disabled = false;
-        doneButton.style.display = "inline-block";
+const raceButton = document.getElementById("race-button");
+const print_out_container = document.getElementById("print-out-container");
+
+
+
+// Shows tasks on screen
+function display_current_tasks() {
+    if (school_index < task_list.school.length) {
+        school_task.textContent = task_list.school[school_index];
     }
+    else {
+        school_task.textContent = "All school tasks completed!"
+    }
+
+    if (career_index < task_list.career.length) {
+        career_task.textContent = task_list.career[career_index];
+    }
+    else {
+        career_task.textContent = "All career tasks completed!"
+    }
+
+    if (health_index < task_list.health.length) {
+        health_task.textContent = task_list.health[health_index];
+    }
+    else {
+        health_task.textContent = "All health tasks completed!"
+    }
+
+    if ((school_index >= task_list.school.length) && (career_index >= task_list.career.length) && (health_index >= task_list.health.length)) {
+        raceButton.style.display = "block";
+        raceButton.removeAttribute("disabled");
+        print_out_container.style.display = "none";
+
+
+        
+    }
+
 }
 
-function display_tasks(){
-    let school_task = random_task(school);
-    let career_task = random_task(career);
-    let health_task = random_task(health);
-    document.getElementById("school").innerHTML = school_task;
-    document.getElementById("career").innerHTML = career_task;
-    document.getElementById("health").innerHTML = health_task;
-}
-
-function task_completer(){
+// Checks for click and prints out proper task in array
+function task_completer() {
     document.getElementById("school-button").addEventListener("click", function() {
-        if (school.length > 0) {
-            document.getElementById("school").innerHTML = random_task(school);
-            school_counter++;
-            document.getElementById("school-counter").innerHTML = school_counter
-        } else {
-            document.getElementById("school").innerHTML = "No more tasks!";
-        }
-        check_if_done();
+        school_index++;
+        display_current_tasks();
     });
 
     document.getElementById("career-button").addEventListener("click", function() {
-        if (career.length > 0) {
-            document.getElementById("career").innerHTML = random_task(career);
-            career_counter++
-        } else {
-            document.getElementById("career").innerHTML = "No more tasks!";
-        }
-        check_if_done();
+        career_index++;
+        display_current_tasks();
     });
 
     document.getElementById("health-button").addEventListener("click", function() {
-        if (health.length > 0) {
-            document.getElementById("health").innerHTML = random_task(health);
-            health_counter++
-        } else {
-            document.getElementById("health").innerHTML = "No more tasks!";
-        }
-        check_if_done();
+        health_index++;
+        display_current_tasks();
     });
 
 }
 
 function main() {
-    display_tasks();
+    display_current_tasks();
     task_completer();
 }
+
+// Insert training image
+document.getElementById("uniform-img-space").src = uniform_img;
+
+// Button to start race, moves to success page, only visible after all tasks are done
+document.getElementById("race-button").addEventListener("click", function() {
+    window.location.href = "success.html";
+});
+
 
 main();

@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Select your Uma Racer to train!">
     <title>Selection Screen</title>
-    <link href="styles/uma_productivity.css" rel="stylesheet">
+    <link href="styles/select-uma.css" rel="stylesheet">
+    <script type="module" src="select-uma.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="select-uma">
-        <h1>Select your Umamusume</h1>
-        <div class="uma-group">
-            <a href="training.html" class="curren-hover-img" aria-label="Train Curren-chan"></a>
-            <div class="haru-hover-img"></div>
-            <div class="special-hover-img"></div>
-        </div>
+    <h1>Select your Umamusume</h1>
+    <div class="uma-group">
+        <a href="#" id="select-curren" class="char_select" aria-label="Train Curren-chan" >
+            <img src="./images/curren_mini_0.png">
+        </a>
+        <a href="#" id="select-haru" class="char_select" aria-label="Train Haru Urara">
+            <img src="./images/haru_mini_0.png">
+        </a>
+        <a href="#" id="select-special" class="char_select" aria-label="Train Special Week">
+            <img src="./images/special_mini_0.png">
+        </a>
     </div>
-    <p>Select your character! During the training phase, you will advance your character's racing skills while also completing the tasks on your to-do list!<br>
-    For demonstrative purposes I already have pre-selected tasks, but in future iterations you can import your task schedule via json file!<br>Also currently the only available character
-    is Curren-chan, she's the one on the left!</p>
 </body>
 </html>

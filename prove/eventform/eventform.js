@@ -37,16 +37,15 @@ form.addEventListener("submit", function (event) {
   const lastName = form.lastName.value.trim();
   const email = form.email.value.trim();
   const type = form.travelRange.value;
-  const availableDate = form.availableDate.value;
+  const eventDate = form.eventDate.value;
   const ID = form.ID.value.trim();
 
   // Validate the input
   
-  // Let the user know if they choose many campuses but didn't put a note that they need to add a note
-    if (type === 'student' && !ID){
-        output.textContent = "Please input your ID";
-        return
-    }
+  if (type === 'student' && !ID){
+      output.textContent = "Please input your ID";
+      return
+  }
 
   if (isPastDate(eventDate)) {
     output.textContent = "Please choose a later date.";

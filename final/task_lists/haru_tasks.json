@@ -1,0 +1,5 @@
+{
+  "school": ["Go to CSE 210 class", "Do Object-Oriented HW", "Practice Rust", "Programming Project"],
+  "career": ["Make 3 connections", "Message local tech firms", "Finish LinkedIn Puzzles", "Make a LinkedIn post"],
+  "health": ["Weight training for 20min", "Eat sandwich for lunch", "Drink a glass of water", "Plan social event"]
+}   

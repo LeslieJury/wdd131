@@ -3,37 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The training classroom where the player can train their Uma by completing their daily tasks.">
     <title>Uma Training</title>
-    <link href="styles/uma_productivity.css" rel="stylesheet">
+    <link href="styles/training.css" rel="stylesheet">
     <script src="training.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
-    <img class="bg-image-class">
-    <div class="content">
-        <h1> Uma Training</h1>
-        <div class="uma-group">
-            <div class="curren-regular"></div>
+    <img id="bg-img" src="images/classroom.jpg">
+    <h1> Uma Training</h1>
+    <img id="uniform-img-space">
+    <button id="race-button" disabled style="display: none;">Race!</button>
+
+    <div id="print-out-container">
+        <div class="print-out">
+            <h2>School</h2>
+            <p id="school_task"></p>
+            <button id="school-button">Done!</button>
         </div>
- <button id="done-button" disabled style="display: none;">Done</button>
-        <div class="pink-bar">
-            
-            <div class="print-out">
-                <h2>School</h2>
-                <p id="school"></p>
-                <button id="school-button">Done!</button>
-            </div>
 
-            <div class="print-out">
-                <h2>Career</h2>
-                <p id="career"></p>
-                <button id="career-button">Done!</button>
-            </div>
+        <div class="print-out">
+            <h2>Career</h2>
+            <p id="career_task"></p>
+            <button id="career-button">Done!</button>
+        </div>
 
-            <div class="print-out">
-                <h2>Health</h2>
-                <p id="health"></p>
-                <button id="health-button">Done!</button>
-            </div>
+        <div class="print-out">
+            <h2>Health</h2>
+            <p id="health_task"></p>
+            <button id="health-button">Done!</button>
         </div>
     </div>
 </body>
