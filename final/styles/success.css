@@ -73,3 +73,9 @@ button {
     max-width: 100px;
     margin-bottom: 5px;
 }
+
+@media (min-width: 500px) {
+    #racing-img-space {
+        max-width: 300px;
+    }
+}

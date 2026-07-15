@@ -68,11 +68,29 @@ button {
     object-fit: cover;
     z-index: -1000;
     overflow: hidden;
-
 }
 
 
 #uniform-img-space {
     max-width: 100px;
     margin-bottom: 5px;
+}
+
+#print-out-container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 700px) {
+    #print-out-container {
+        flex-direction: row;
+        align-items: center;
+    }
+    .print-out {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #uniform-img-space {
+        max-width: 300px;
+    }
 }

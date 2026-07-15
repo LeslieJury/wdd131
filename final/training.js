@@ -18,8 +18,7 @@ let career_index = 0;
 let health_index = 0;
 
 const raceButton = document.getElementById("race-button");
-const print_out_container = document.getElementById("print-out-container");
-
+const print_out_container = document.getElementById("print-out-container")
 
 
 // Shows tasks on screen
@@ -49,8 +48,6 @@ function display_current_tasks() {
         raceButton.style.display = "block";
         raceButton.removeAttribute("disabled");
         print_out_container.style.display = "none";
-
-
         
     }
 
